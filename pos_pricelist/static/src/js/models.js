@@ -576,7 +576,7 @@ odoo.define('pos_pricelist.models', function (require) {
         simulate_price: function (product, partner, price, qty) {
             // create a fake order in order to get price
             // for this customer
-            var order = new models.Order({pos: this.pos});
+            var order = new models.Order({}, {pos: this.pos});
             order.set_client(partner);
             var orderline = new models.Orderline
             ({}, {
